@@ -29,7 +29,6 @@ public class Warrior extends Character{
             System.out.println(this.name + " swung for a quick attack, but " + target.name + " dodged it!");
         }
     }
-
     @Override
     public void strongAttack(Character target) {
         int chance = random.nextInt(100);
