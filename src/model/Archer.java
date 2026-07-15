@@ -6,8 +6,8 @@ public class Archer extends Character{
 
     private final Random random = new Random();
 
-    public Archer(String name) {
-        super(name, 3, 100, 0, 20, 5, 12, 0);
+    public Archer(String name, Race race) {
+        super(name, race, 3, 100, 0, 20, 5, 12, 0);
     }
 
     @Override

@@ -2,6 +2,7 @@ import model.Character;
 import model.Archer;
 import model.Mage;
 import model.Warrior;
+import model.Race;
 
 import java.util.Scanner;
 
@@ -53,27 +54,47 @@ public class Main {
         System.out.println("1. Warrior ⚔\uFE0F");
         System.out.println("2. Mage \uD83D\uDD2E");
         System.out.println("3. Archer \uD83C\uDFF9");
-        System.out.print("Select yout character's class: ");
-        int choice = sc.nextInt();
+        System.out.print("Select your character's class: ");
+        int classChoice = sc.nextInt();
         sc.nextLine(); // Limpar buffer de entrada
+
+        System.out.println("\n============================");
+        System.out.println("1. Human (Balanced)");
+        System.out.println("2. Elf (More Mana & Speed, Less Health & Defense)");
+        System.out.println("3. Dwarf (More Health, Defense & Strength, Less Speed & Mana)");
+        System.out.println("4. Orc (More Health & Strength, Less Defense & Mana)");
+        System.out.print("Select your character's race: ");
+        int raceChoice = sc.nextInt();
+        sc.nextLine();
+
+        Race race;
+        switch (raceChoice) {
+            case 1: race = Race.HUMAN; break;
+            case 2: race = Race.ELF; break;
+            case 3: race = Race.DWARF; break;
+            case 4: race = Race.ORC; break;
+            default: 
+                System.out.println("Invalid race! Defaulting to Human.");
+                race = Race.HUMAN;
+        }
 
         System.out.print("\nEnter the character's name: ");
         String name = sc.nextLine();
 
         Character createdCharacter = null;
 
-        switch (choice) {
+        switch (classChoice) {
             case 1:
-                createdCharacter = new Warrior(name);
-                System.out.println("\nWarrior " + name + " created successfully!");
+                createdCharacter = new Warrior(name, race);
+                System.out.println("\nWarrior " + name + " (" + race.getName() + ") created successfully!");
                 break;
             case 2:
-                createdCharacter = new Mage(name);
-                System.out.println("\nMage " + name + " created successfully!");
+                createdCharacter = new Mage(name, race);
+                System.out.println("\nMage " + name + " (" + race.getName() + ") created successfully!");
                 break;
             case 3:
-                createdCharacter = new Archer(name);
-                System.out.println("\nArcher " + name + " created successfully!");
+                createdCharacter = new Archer(name, race);
+                System.out.println("\nArcher " + name + " (" + race.getName() + ") created successfully!");
                 break;
             default:
                 System.out.println("\nInvalid class selected! Character creation failed.");

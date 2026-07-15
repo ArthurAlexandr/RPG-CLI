@@ -6,10 +6,15 @@ public class Mage extends Character{
 
     private final Random random = new Random();
 
-    public Mage(String name) {
-        // Classe construtora de Guerreiro, ja comeca nvl 3
-        super(name, 3, 90, 22, 5, 8, 10, 60);
+    public Mage(String name, Race race) {
+        // Classe construtora de Mago, ja comeca nvl 3
+        super(name, race, 3, 90, 22, 5, 8, 10, 60);
 
+    }
+
+    @Override
+    protected String getPrimaryStat() {
+        return "Poder: " + stats.getPower();
     }
 
     @Override

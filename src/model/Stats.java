@@ -89,6 +89,7 @@ public class Stats {
 
     @Override
     public String toString() {
+
         return "HP: " + health + "/" + maxHealth +
                 " | Força: " + strength +
                 " | Defesa: " + defense +

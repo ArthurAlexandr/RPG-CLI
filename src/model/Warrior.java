@@ -6,9 +6,9 @@ public class Warrior extends Character{
 
     private final Random random = new Random();
 
-    public Warrior(String name) {
+    public Warrior(String name, Race race) {
         // Classe construtora de Guerreiro, ja comeca nvl 3
-        super(name, 3, 120, 0, 15, 12, 8, 0);
+        super(name, race, 3, 120, 0, 15, 12, 8, 0);
     }
 
     @Override
