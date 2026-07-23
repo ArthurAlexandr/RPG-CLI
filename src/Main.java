@@ -3,6 +3,7 @@ import model.Archer;
 import model.Mage;
 import model.Warrior;
 import model.Race;
+import view.ConsoleMenu;
 
 import java.util.Scanner;
 
@@ -21,8 +22,8 @@ public class Main {
                 case 1:
                     player = createCharacter();
                     if (player != null) {
-                        System.out.println("\nReady for adventure, " + player.isAlive() + "? Wait, let's see your stats:");
-                        player.showStatus();
+                        System.out.println("\nReady for adventure, " + player.getName() + "! Let's start your journey!");
+                        ConsoleMenu.startAdventure(player);
                     }
                     break;
                 case 2:
